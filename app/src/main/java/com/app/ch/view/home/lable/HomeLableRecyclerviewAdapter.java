@@ -2,7 +2,9 @@ package com.app.ch.view.home.lable;
 
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
+import android.util.ArrayMap;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,19 +15,22 @@ import android.widget.Toast;
 
 import com.app.ch.view.R;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
 public class HomeLableRecyclerviewAdapter extends RecyclerView.Adapter<HomeLableRecyclerviewAdapter.VH> {
+    private final static String TAG = "HomeLableRecyclerviewAdapter";
     public final static String HOME_LABLE_NAME = "HOME_LABLE_NAME_title";
     public final static String HOME_LABLE_FRAGMENT = "HOME_LABLE_NAME_fragment";
-    static String TAG = "HomeLableRecyclerviewAdapter";
-    List<Map<String, Object>> mapList;
+    static List<Map<String, Object>> homeLableMapList = new ArrayList<>();
 
-    public HomeLableRecyclerviewAdapter(List<Map<String, Object>> mapList) {
-        this.mapList = mapList;
-        Log.e(TAG, HomeLableRecyclerviewAdapter.class.getName() + "map.size()" + this.mapList.size());
+    public static void addHomeLable(String homeLable, Fragment fragment) {
+        Map<String ,Object> map = new ArrayMap<>();
+        map.put(HomeLableRecyclerviewAdapter.HOME_LABLE_NAME, homeLable);
+        map.put(HomeLableRecyclerviewAdapter.HOME_LABLE_FRAGMENT, fragment);
+        homeLableMapList.add(map);
     }
 
     @NonNull
@@ -38,7 +43,7 @@ public class HomeLableRecyclerviewAdapter extends RecyclerView.Adapter<HomeLable
 
     @Override
     public void onBindViewHolder(@NonNull final VH vh, final int i) {
-        vh.item_name.setText("" + this.mapList.get(i).get(HOME_LABLE_NAME));
+        vh.item_name.setText("" + this.homeLableMapList.get(i).get(HOME_LABLE_NAME));
         vh.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,7 +54,7 @@ public class HomeLableRecyclerviewAdapter extends RecyclerView.Adapter<HomeLable
 
     @Override
     public int getItemCount() {
-        return this.mapList != null ? this.mapList.size() : 0;
+        return this.homeLableMapList != null ? this.homeLableMapList.size() : 0;
     }
 
     public class VH extends RecyclerView.ViewHolder {
