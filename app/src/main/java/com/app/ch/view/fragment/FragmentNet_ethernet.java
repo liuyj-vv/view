@@ -11,19 +11,27 @@ import android.widget.Button;
 
 import com.app.ch.view.R;
 
-public class FragmentNet extends MyFragment {
-    Fragment fragment = new FragmentNet_ethernet();
+public class FragmentNet_ethernet extends MyFragment {
+    Button button;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_net, container, false);
-        Button button = view.findViewById(R.id.child_fragment);
+        View view = inflater.inflate(R.layout.fragment_net_ethernet, container, false);
+        button = view.findViewById(R.id.back_net);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switchFragment(fragment);
             }
         });
+        button.requestFocus();
         return view;
+    }
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        if (!hidden) {
+            button.requestFocus();
+        }
     }
 }

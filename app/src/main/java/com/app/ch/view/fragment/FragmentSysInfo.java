@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 import com.app.ch.view.R;
 
-public class FragmentSysInfo extends Fragment {
+public class FragmentSysInfo extends MyFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.app.ch.view.R;
+import com.app.ch.view.fragment.MyFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +25,6 @@ public class HomeLableRecyclerviewAdapter extends RecyclerView.Adapter<HomeLable
     public final static String HOME_LABLE_FRAGMENT = "HOME_LABLE_NAME_fragment";
     static List<Map<String, Object>> homeLableMapList = new ArrayList<>();
     AppCompatActivity activity;
-
 
     public HomeLableRecyclerviewAdapter(AppCompatActivity activity) {
         this.activity = activity;
@@ -44,6 +44,7 @@ public class HomeLableRecyclerviewAdapter extends RecyclerView.Adapter<HomeLable
         view.getLayoutParams().width = viewGroup.getWidth()/getItemCount();  //一行平分宽度
         return new VH(view);
     }
+
     @Override
     public void onBindViewHolder(@NonNull final VH vh, final int i) {
         vh.item_name.setText("" + this.homeLableMapList.get(i).get(HOME_LABLE_NAME));
@@ -62,10 +63,9 @@ public class HomeLableRecyclerviewAdapter extends RecyclerView.Adapter<HomeLable
         });
     }
 
-    private Fragment fragmentCurr = null;
     private void switchFragment(Fragment fragmentTo) {
         FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
-        if(fragmentCurr == fragmentTo) {
+        if(MyFragment.fragmentCurr == fragmentTo) {
             return;
         }
 
@@ -75,12 +75,12 @@ public class HomeLableRecyclerviewAdapter extends RecyclerView.Adapter<HomeLable
             transaction.add(R.id.home_fragment, fragmentTo).show(fragmentTo);
         }
 
-        if (null != fragmentCurr) {
-            transaction.hide(fragmentCurr);
+        if (null != MyFragment.fragmentCurr) {
+            transaction.hide(MyFragment.fragmentCurr);
         }
 
         transaction.commit();
-        fragmentCurr = fragmentTo;
+        MyFragment.fragmentCurr = fragmentTo;
     }
 
     @Override

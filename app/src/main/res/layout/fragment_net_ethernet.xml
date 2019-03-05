@@ -9,10 +9,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="25dp"
-        android:text="net" />
+        android:text="ethernet" />
     <Button
-        android:id="@+id/child_fragment"
+        android:id="@+id/back_net"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="child_fragment"/>
+        android:text="backnet"/>
 </LinearLayout>
