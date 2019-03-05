@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         map.put(STR_DISPLAY, null);
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.home_lable_recyclerview);
         HomeLableRecyclerviewAdapter homeLableRecyclerview = new HomeLableRecyclerviewAdapter(map);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         recyclerView.setAdapter(homeLableRecyclerview);
     }
 }
