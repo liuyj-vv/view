@@ -1,8 +1,13 @@
 package com.app.ch.view.home.lable;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.util.ArrayMap;
 import android.util.Log;
@@ -14,9 +19,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.ch.view.R;
+import com.app.ch.view.fragment.FragmentSysInfo;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -25,6 +30,12 @@ public class HomeLableRecyclerviewAdapter extends RecyclerView.Adapter<HomeLable
     public final static String HOME_LABLE_NAME = "HOME_LABLE_NAME_title";
     public final static String HOME_LABLE_FRAGMENT = "HOME_LABLE_NAME_fragment";
     static List<Map<String, Object>> homeLableMapList = new ArrayList<>();
+    AppCompatActivity activity;
+
+
+    public HomeLableRecyclerviewAdapter(AppCompatActivity activity) {
+        this.activity = activity;
+    }
 
     public static void addHomeLable(String homeLable, Fragment fragment) {
         Map<String ,Object> map = new ArrayMap<>();
@@ -40,15 +51,19 @@ public class HomeLableRecyclerviewAdapter extends RecyclerView.Adapter<HomeLable
         view.getLayoutParams().width = viewGroup.getWidth()/getItemCount();  //一行平分宽度
         return new VH(view);
     }
-
     @Override
     public void onBindViewHolder(@NonNull final VH vh, final int i) {
         vh.item_name.setText("" + this.homeLableMapList.get(i).get(HOME_LABLE_NAME));
+        final Fragment fragment = (Fragment) this.homeLableMapList.get(i).get(HOME_LABLE_FRAGMENT);
+
         vh.itemView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @SuppressLint("ResourceType")
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (hasFocus) {
-                    Toast.makeText(v.getContext(), "聚焦：" + i, Toast.LENGTH_SHORT).show();
+                    if (null != fragment) {
+                        activity.getSupportFragmentManager().beginTransaction().replace(R.id.home_fragment, fragment).commit();
+                    }
                 }
             }
         });
