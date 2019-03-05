@@ -44,10 +44,12 @@ public class HomeLableRecyclerviewAdapter extends RecyclerView.Adapter<HomeLable
     @Override
     public void onBindViewHolder(@NonNull final VH vh, final int i) {
         vh.item_name.setText("" + this.homeLableMapList.get(i).get(HOME_LABLE_NAME));
-        vh.itemView.setOnClickListener(new View.OnClickListener() {
+        vh.itemView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
-            public void onClick(View v) {
-                Toast.makeText(v.getContext(), "按下：" + i, Toast.LENGTH_SHORT).show();
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    Toast.makeText(v.getContext(), "聚焦：" + i, Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

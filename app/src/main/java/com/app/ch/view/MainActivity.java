@@ -11,6 +11,8 @@ public class MainActivity extends AppCompatActivity {
     static String STR_SYSINFO = "系统信息";
     static String STR_NET = "网络设置";
     static String STR_DISPLAY = "显示设置";
+    static String STR_AUDIO = "音频设置";
+    static String STR_TOOLS = "系统工具";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
         HomeLableRecyclerviewAdapter.addHomeLable(STR_SYSINFO, null);
         HomeLableRecyclerviewAdapter.addHomeLable(STR_NET, null);
         HomeLableRecyclerviewAdapter.addHomeLable(STR_DISPLAY, null);
+        HomeLableRecyclerviewAdapter.addHomeLable(STR_AUDIO, null);
+        HomeLableRecyclerviewAdapter.addHomeLable(STR_TOOLS, null);
         HomeLableRecyclerviewAdapter homeLableRecyclerview = new HomeLableRecyclerviewAdapter();
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.home_lable_recyclerview);
