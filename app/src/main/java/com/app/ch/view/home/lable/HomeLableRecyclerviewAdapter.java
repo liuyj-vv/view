@@ -1,5 +1,6 @@
 package com.app.ch.view.home.lable;
 
+import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -7,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.app.ch.view.R;
 
@@ -31,8 +34,14 @@ public class HomeLableRecyclerviewAdapter extends RecyclerView.Adapter<HomeLable
     }
 
     @Override
-    public void onBindViewHolder(@NonNull VH vh, int i) {
-        vh.button.setText("" + i);
+    public void onBindViewHolder(@NonNull final VH vh, final int i) {
+        vh.item_name.setText("" + i);
+        vh.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(), "按下：" + i, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
@@ -41,10 +50,13 @@ public class HomeLableRecyclerviewAdapter extends RecyclerView.Adapter<HomeLable
     }
 
     public class VH extends RecyclerView.ViewHolder {
-        Button button;
+        TextView item_name;
         public VH(@NonNull View itemView) {
             super(itemView);
-            button = itemView.findViewById(R.id.home_lable_btn);
+            item_name = itemView.findViewById(R.id.home_lable_btn);
+
+            itemView.setFocusable(true);
+            itemView.setBackground(itemView.getResources().getDrawable(R.drawable.maker_btn));
         }
     }
 }
