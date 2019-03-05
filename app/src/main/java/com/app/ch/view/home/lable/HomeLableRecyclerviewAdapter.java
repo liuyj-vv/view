@@ -13,16 +13,17 @@ import android.widget.Toast;
 
 import com.app.ch.view.R;
 
+import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 public class HomeLableRecyclerviewAdapter extends RecyclerView.Adapter<HomeLableRecyclerviewAdapter.VH> {
     static String TAG = "HomeLableRecyclerviewAdapter";
-    Map<String,Object> map;
+    List<Map<String, Object>> mapList;
 
-    public HomeLableRecyclerviewAdapter(Map<String,Object> map) {
-        this.map = map;
-        Log.e(TAG, HomeLableRecyclerviewAdapter.class.getName() + "map.size()" + this.map.size());
-
+    public HomeLableRecyclerviewAdapter(List<Map<String, Object>> mapList) {
+        this.mapList = mapList;
+        Log.e(TAG, HomeLableRecyclerviewAdapter.class.getName() + "map.size()" + this.mapList.size());
     }
 
     @NonNull
@@ -35,7 +36,7 @@ public class HomeLableRecyclerviewAdapter extends RecyclerView.Adapter<HomeLable
 
     @Override
     public void onBindViewHolder(@NonNull final VH vh, final int i) {
-        vh.item_name.setText("" + i);
+        vh.item_name.setText("" + this.mapList.get(i));
         vh.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,7 +47,7 @@ public class HomeLableRecyclerviewAdapter extends RecyclerView.Adapter<HomeLable
 
     @Override
     public int getItemCount() {
-        return this.map != null ? this.map.size() : 0;
+        return this.mapList != null ? this.mapList.size() : 0;
     }
 
     public class VH extends RecyclerView.ViewHolder {
