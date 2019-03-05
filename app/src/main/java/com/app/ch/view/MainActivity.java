@@ -29,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
         LinkedHashMap<String ,Object> map = new LinkedHashMap<>();
         packageMapFragmentToList(homeLableMapList, STR_SYSINFO, null);
-//        packageMapFragmentToList(homeLableMapList ,STR_NET, null);
-//        packageMapFragmentToList(homeLableMapList ,STR_DISPLAY, null);
+        packageMapFragmentToList(homeLableMapList ,STR_NET, null);
+        packageMapFragmentToList(homeLableMapList ,STR_DISPLAY, null);
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.home_lable_recyclerview);
         HomeLableRecyclerviewAdapter homeLableRecyclerview = new HomeLableRecyclerviewAdapter(homeLableMapList);
@@ -40,7 +40,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void packageMapFragmentToList(List<Map<String, Object>> mapList, String homeLable, Fragment fragment) {
         Map<String ,Object> map = new ArrayMap<>();
-        map.put(homeLable, fragment);
+        map.put(HomeLableRecyclerviewAdapter.HOME_LABLE_NAME, homeLable);
+        map.put(HomeLableRecyclerviewAdapter.HOME_LABLE_FRAGMENT, fragment);
         mapList.add(map);
     }
 }

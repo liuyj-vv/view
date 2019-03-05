@@ -18,6 +18,8 @@ import java.util.List;
 import java.util.Map;
 
 public class HomeLableRecyclerviewAdapter extends RecyclerView.Adapter<HomeLableRecyclerviewAdapter.VH> {
+    public final static String HOME_LABLE_NAME = "HOME_LABLE_NAME_title";
+    public final static String HOME_LABLE_FRAGMENT = "HOME_LABLE_NAME_fragment";
     static String TAG = "HomeLableRecyclerviewAdapter";
     List<Map<String, Object>> mapList;
 
@@ -36,7 +38,7 @@ public class HomeLableRecyclerviewAdapter extends RecyclerView.Adapter<HomeLable
 
     @Override
     public void onBindViewHolder(@NonNull final VH vh, final int i) {
-        vh.item_name.setText("" + this.mapList.get(i));
+        vh.item_name.setText("" + this.mapList.get(i).get(HOME_LABLE_NAME));
         vh.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
