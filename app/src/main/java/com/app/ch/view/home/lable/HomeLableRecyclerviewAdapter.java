@@ -33,7 +33,6 @@ public class HomeLableRecyclerviewAdapter extends RecyclerView.Adapter<HomeLable
     @Override
     public void onBindViewHolder(@NonNull VH vh, int i) {
         vh.button.setText("" + i);
-//        vh.itemView.setMinimumWidth();
     }
 
     @Override
