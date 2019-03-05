@@ -1,25 +1,18 @@
 package com.app.ch.view.home.lable;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.util.ArrayMap;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.app.ch.view.R;
-import com.app.ch.view.fragment.FragmentSysInfo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,11 +55,32 @@ public class HomeLableRecyclerviewAdapter extends RecyclerView.Adapter<HomeLable
             public void onFocusChange(View v, boolean hasFocus) {
                 if (hasFocus) {
                     if (null != fragment) {
-                        activity.getSupportFragmentManager().beginTransaction().replace(R.id.home_fragment, fragment).commit();
+                        switchFragment(fragment);
                     }
                 }
             }
         });
+    }
+
+    private Fragment fragmentCurr = null;
+    private void switchFragment(Fragment fragmentTo) {
+        FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
+        if(fragmentCurr == fragmentTo) {
+            return;
+        }
+
+        if (fragmentTo.isAdded()) {
+            transaction.show(fragmentTo);
+        } else {
+            transaction.add(R.id.home_fragment, fragmentTo).show(fragmentTo);
+        }
+
+        if (null != fragmentCurr) {
+            transaction.hide(fragmentCurr);
+        }
+
+        transaction.commit();
+        fragmentCurr = fragmentTo;
     }
 
     @Override
