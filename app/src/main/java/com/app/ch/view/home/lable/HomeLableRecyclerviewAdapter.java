@@ -26,12 +26,14 @@ public class HomeLableRecyclerviewAdapter extends RecyclerView.Adapter<HomeLable
     @Override
     public VH onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.home_lable_recyclerview_item, viewGroup, false);
+        view.getLayoutParams().width = viewGroup.getWidth()/getItemCount();  //一行平分宽度
         return new VH(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull VH vh, int i) {
         vh.button.setText("" + i);
+//        vh.itemView.setMinimumWidth();
     }
 
     @Override
