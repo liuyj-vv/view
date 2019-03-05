@@ -48,7 +48,7 @@ public class HomeLableRecyclerviewAdapter extends RecyclerView.Adapter<HomeLable
     @Override
     public void onBindViewHolder(@NonNull final VH vh, final int i) {
         vh.item_name.setText("" + this.homeLableMapList.get(i).get(HOME_LABLE_NAME));
-        final Fragment fragment = (Fragment) this.homeLableMapList.get(i).get(HOME_LABLE_FRAGMENT);
+        final MyFragment fragment = (MyFragment) this.homeLableMapList.get(i).get(HOME_LABLE_FRAGMENT);
 
         vh.itemView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @SuppressLint("ResourceType")
@@ -63,7 +63,7 @@ public class HomeLableRecyclerviewAdapter extends RecyclerView.Adapter<HomeLable
         });
     }
 
-    private void switchFragment(Fragment fragmentTo) {
+    private void switchFragment(MyFragment fragmentTo) {
         FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
         if(MyFragment.fragmentCurr == fragmentTo) {
             return;
@@ -80,7 +80,9 @@ public class HomeLableRecyclerviewAdapter extends RecyclerView.Adapter<HomeLable
         }
 
         transaction.commit();
+        fragmentTo.flagSiwtchFromRecyclerview = 1;  //设置 flagment 的进入方式时通过 homeLable 标签
         MyFragment.fragmentCurr = fragmentTo;
+        MyFragment.fragmentStack.push(fragmentTo);
     }
 
     @Override

@@ -3,7 +3,6 @@ package com.app.ch.view.fragment;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +20,12 @@ public class FragmentNet_ethernet extends MyFragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ; //弹出自己
+                if (!fragmentStack.empty() && null != fragmentStack.pop()) {
+                    if (!fragmentStack.empty()) {
+                        switchFragment(fragmentStack.pop());
+                    }
+                }
             }
         });
         button.requestFocus();

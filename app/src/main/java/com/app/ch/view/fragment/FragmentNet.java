@@ -13,11 +13,12 @@ import com.app.ch.view.R;
 
 public class FragmentNet extends MyFragment {
     Fragment fragment = new FragmentNet_ethernet();
+    Button button;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_net, container, false);
-        Button button = view.findViewById(R.id.child_fragment);
+        button = view.findViewById(R.id.child_fragment);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -25,5 +26,13 @@ public class FragmentNet extends MyFragment {
             }
         });
         return view;
+    }
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        if (!hidden && flagSiwtchFromRecyclerview != 1) {
+            button.requestFocus();
+        }
+        super.onHiddenChanged(hidden);
     }
 }

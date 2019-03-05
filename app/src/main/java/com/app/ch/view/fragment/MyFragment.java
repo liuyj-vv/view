@@ -5,8 +5,21 @@ import android.support.v4.app.FragmentTransaction;
 
 import com.app.ch.view.R;
 
+import java.util.Stack;
+
 public class MyFragment extends Fragment {
+    public static Stack<Fragment> fragmentStack = new Stack<>();
     public static Fragment fragmentCurr = null;
+    public int flagSiwtchFromRecyclerview = 0;  //标志当前切换进入 fragment 的方式
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        if (!hidden) {
+            flagSiwtchFromRecyclerview = 0;
+        }
+    }
+
     public void switchFragment(Fragment fragmentTo) {
         FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
         if(fragmentCurr == fragmentTo) {
@@ -25,5 +38,6 @@ public class MyFragment extends Fragment {
 
         transaction.commit();
         fragmentCurr = fragmentTo;
+        fragmentStack.push(fragmentTo);
     }
 }

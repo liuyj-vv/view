@@ -14,5 +14,6 @@
         android:id="@+id/back_net"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/maker_btn"
         android:text="backnet"/>
 </LinearLayout>
