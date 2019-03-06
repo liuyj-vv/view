@@ -79,11 +79,11 @@ public class FocusKeepRecyclerView extends RecyclerView {
             View nextFocusItemView = findContainingItemView(view);
             if (nextFocusItemView == null) {
                 if (!mCanFocusOutVertical && (direction == View.FOCUS_DOWN || direction == View.FOCUS_UP)) {
-                    //屏蔽焦点纵向移出recyclerview
+                    //屏蔽--焦点纵向移出recyclerview，直接返回当前焦点
                     return focused;
                 }
                 if (!mCanFocusOutHorizontal && (direction == View.FOCUS_LEFT || direction == View.FOCUS_RIGHT)) {
-                    //屏蔽焦点横向移出recyclerview
+                    //屏蔽--焦点横向移出recyclerview，直接返回当前焦点
                     return focused;
                 }
                 //调用移出的监听
