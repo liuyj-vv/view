@@ -23,14 +23,14 @@ public class HomeLableRecyclerviewAdapter extends RecyclerView.Adapter<HomeLable
     private final static String TAG = "HomeLableRecyclerviewAdapter";
     public final static String HOME_LABLE_NAME = "HOME_LABLE_NAME_title";
     public final static String HOME_LABLE_FRAGMENT = "HOME_LABLE_NAME_fragment";
-    static List<Map<String, Object>> homeLableMapList = new ArrayList<>();
+    List<Map<String, Object>> homeLableMapList = new ArrayList<>();
     AppCompatActivity activity;
 
     public HomeLableRecyclerviewAdapter(AppCompatActivity activity) {
         this.activity = activity;
     }
 
-    public static void addHomeLable(String homeLable, Fragment fragment) {
+    public void addHomeLable(String homeLable, Fragment fragment) {
         Map<String ,Object> map = new ArrayMap<>();
         map.put(HomeLableRecyclerviewAdapter.HOME_LABLE_NAME, homeLable);
         map.put(HomeLableRecyclerviewAdapter.HOME_LABLE_FRAGMENT, fragment);

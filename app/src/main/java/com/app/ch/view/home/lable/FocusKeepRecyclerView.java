@@ -134,7 +134,7 @@ public class FocusKeepRecyclerView extends RecyclerView {
         if (this.hasFocus() || mCurrentFocusPosition < 0 || (view = getLayoutManager().findViewByPosition(mCurrentFocusPosition)) == null) {
             super.addFocusables(views,direction,focusableMode);
         }else if(view.isFocusable()){
-//将当前的view放到Focusable views列表中，再次移入焦点时会取到该view,实现焦点记忆功能
+            //将当前的view放到Focusable views列表中，再次移入焦点时会取到该view,实现焦点记忆功能
             views.add(view);
         }else{
             super.addFocusables(views,direction,focusableMode);

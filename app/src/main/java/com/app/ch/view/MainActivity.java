@@ -34,21 +34,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        HomeLableRecyclerviewAdapter.addHomeLable(STR_SYSINFO, fragmentSysInfo);
-        HomeLableRecyclerviewAdapter.addHomeLable(STR_NET, fragmentNet);
-        HomeLableRecyclerviewAdapter.addHomeLable(STR_DISPLAY, fragmentDisplay);
-        HomeLableRecyclerviewAdapter.addHomeLable(STR_AUDIO, fragmentAudio);
-        HomeLableRecyclerviewAdapter.addHomeLable(STR_TOOLS, fragmentSysInfo1);
-        HomeLableRecyclerviewAdapter homeLableRecyclerview = new HomeLableRecyclerviewAdapter(this);
-
         FocusKeepRecyclerView recyclerView = findViewById(R.id.home_lable);
+        HomeLableRecyclerviewAdapter homeLableRecyclerview = new HomeLableRecyclerviewAdapter(this);
+        homeLableRecyclerview.addHomeLable(STR_SYSINFO, fragmentSysInfo);
+        homeLableRecyclerview.addHomeLable(STR_NET, fragmentNet);
+        homeLableRecyclerview.addHomeLable(STR_DISPLAY, fragmentDisplay);
+        homeLableRecyclerview.addHomeLable(STR_AUDIO, fragmentAudio);
+        homeLableRecyclerview.addHomeLable(STR_TOOLS, fragmentSysInfo1);
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         recyclerView.setAdapter(homeLableRecyclerview);
 
         recyclerView.setGainFocusListener(new FocusGainListener() {
             @Override
             public void onFocusGain(View child, View focued) {
-                Toast.makeText(child.getContext(), "获取焦点", Toast.LENGTH_SHORT).show();
                 focued.setBackground(getResources().getDrawable(R.drawable.maker_btn));
             }
         });
@@ -56,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setFocusLostListener(new FocusKeepRecyclerView.FocusLostListener() {
             @Override
             public void onFocusLost(View lastFocusChild, int direction) {
-                Toast.makeText(lastFocusChild.getContext(), "失去焦点", Toast.LENGTH_SHORT).show();
                 lastFocusChild.setBackground(getResources().getDrawable(R.drawable.maker_btn_lost));
             }
         });
