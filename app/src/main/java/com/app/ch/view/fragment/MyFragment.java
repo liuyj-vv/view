@@ -7,7 +7,7 @@ import com.app.ch.view.R;
 
 import java.util.Stack;
 
-public class MyFragment extends Fragment {
+public class MyFragment extends Fragment implements FragmentBackHandlerInterface{
     public static Stack<Fragment> fragmentStack = new Stack<>();
     public static Fragment fragmentCurr = null;
     public int flagSiwtchFromRecyclerview = 0;  //标志当前切换进入 fragment 的方式
@@ -39,5 +39,15 @@ public class MyFragment extends Fragment {
         transaction.commit();
         fragmentCurr = fragmentTo;
         fragmentStack.push(fragmentTo);
+    }
+
+    /*
+    *   重写时
+    *   返回 return super.onBackPressed(); 处理返回键后还会继续处理。
+    *   返回 return true; 拦截返回键。
+    * */
+    @Override
+    public boolean onBackPressed() {
+        return FragmentBackHandlerHelper.handleBackPress(this);
     }
 }

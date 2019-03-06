@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.app.ch.view.fragment.FragmentAudio;
+import com.app.ch.view.fragment.FragmentBackHandlerHelper;
 import com.app.ch.view.fragment.FragmentDisplay;
 import com.app.ch.view.fragment.FragmentNet;
 import com.app.ch.view.fragment.FragmentSysInfo;
@@ -41,5 +42,10 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(homeLableRecyclerview);
     }
 
-
+    @Override
+    public void onBackPressed() {
+        if (!FragmentBackHandlerHelper.handleBackPress(this)) {
+            super.onBackPressed();
+        }
+    }
 }
