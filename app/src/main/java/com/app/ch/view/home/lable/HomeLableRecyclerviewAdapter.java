@@ -80,7 +80,7 @@ public class HomeLableRecyclerviewAdapter extends RecyclerView.Adapter<HomeLable
         }
 
         transaction.commit();
-        fragmentTo.flagSiwtchFromRecyclerview = 1;  //设置 flagment 的进入方式时通过 homeLable 标签
+        fragmentTo.isFromHomeLable = true;  //设置 flagment 的进入方式时通过 homeLable 标签
         MyFragment.fragmentCurr = fragmentTo;
         MyFragment.fragmentStack.push(fragmentTo);
     }

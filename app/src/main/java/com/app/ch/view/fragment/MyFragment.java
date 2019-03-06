@@ -10,14 +10,12 @@ import java.util.Stack;
 public class MyFragment extends Fragment implements FragmentBackHandlerInterface{
     public static Stack<Fragment> fragmentStack = new Stack<>();
     public static Fragment fragmentCurr = null;
-    public int flagSiwtchFromRecyclerview = 0;  //标志当前切换进入 fragment 的方式
+    public static boolean isFromHomeLable = true;  //标志当前切换进入 fragment 的方式
 
     @Override
     public void onHiddenChanged(boolean hidden) {
         super.onHiddenChanged(hidden);
-        if (!hidden) {
-            flagSiwtchFromRecyclerview = 0;
-        }
+        isFromHomeLable = false;
     }
 
     public void switchFragment(Fragment fragmentTo) {

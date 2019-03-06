@@ -30,7 +30,7 @@ public class FragmentNet extends MyFragment {
 
     @Override
     public void onHiddenChanged(boolean hidden) {
-        if (!hidden && flagSiwtchFromRecyclerview != 1) {
+        if (!hidden && isFromHomeLable == false) {
             button.requestFocus();
         }
         super.onHiddenChanged(hidden);

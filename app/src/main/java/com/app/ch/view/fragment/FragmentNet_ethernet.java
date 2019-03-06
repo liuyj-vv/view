@@ -46,6 +46,12 @@ public class FragmentNet_ethernet extends MyFragment {
     @Override
     public boolean onBackPressed() {
         Toast.makeText(getContext(), TAG+"中按下返回键", Toast.LENGTH_SHORT).show();
+        ; //弹出自己
+        if (!fragmentStack.empty() && null != fragmentStack.pop()) {
+            if (!fragmentStack.empty()) {
+                switchFragment(fragmentStack.pop());
+            }
+        }
         return true;
     }
 }
