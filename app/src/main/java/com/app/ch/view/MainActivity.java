@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFocusGain(View child, View focued) {
                 Toast.makeText(child.getContext(), "获取焦点", Toast.LENGTH_SHORT).show();
+                focued.setBackground(getResources().getDrawable(R.drawable.maker_btn));
             }
         });
 
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFocusLost(View lastFocusChild, int direction) {
                 Toast.makeText(lastFocusChild.getContext(), "失去焦点", Toast.LENGTH_SHORT).show();
+                lastFocusChild.setBackground(getResources().getDrawable(R.drawable.maker_btn_lost));
             }
         });
     }

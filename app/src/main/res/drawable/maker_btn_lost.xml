@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--聚焦并按下-->
+    <item android:state_focused="true"
+        android:state_pressed="true"
+        android:drawable="@drawable/maker_btn_pressed" >
+    </item>
+
+    <!--聚焦未按下-->
+    <item android:state_focused="true"
+        android:state_pressed="false"
+        android:drawable="@drawable/maker_btn_focused" >
+    </item>
+
+    <!--未聚焦-->
+    <item android:state_focused="false"
+        android:drawable="@drawable/maker_btn_lost_normal" >
+    </item> <!-- 触摸模式下单击时的背景图片 -->
+
+    <!--<item android:state_selected="true"-->
+        <!--android:drawable="@drawable/homelable_item_shape" >-->
+    <!--</item>&lt;!&ndash; 选中时的图片背景 &ndash;&gt;-->
+
+    <!--<item android:state_focused="true"-->
+        <!--android:drawable="@drawable/homelable_item_shape" >-->
+    <!--</item> &lt;!&ndash; 获得焦点时的图片背景 &ndash;&gt;-->
+
+</selector>
