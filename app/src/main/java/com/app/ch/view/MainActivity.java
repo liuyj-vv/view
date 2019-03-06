@@ -11,6 +11,7 @@ import com.app.ch.view.fragment.FragmentDisplay;
 import com.app.ch.view.fragment.FragmentNet;
 import com.app.ch.view.fragment.FragmentSysInfo;
 import com.app.ch.view.fragment.FragmentTools;
+import com.app.ch.view.home.lable.FocusKeepRecyclerView;
 import com.app.ch.view.home.lable.HomeLableRecyclerviewAdapter;
 
 public class MainActivity extends AppCompatActivity {
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         HomeLableRecyclerviewAdapter.addHomeLable(STR_TOOLS, fragmentSysInfo1);
         HomeLableRecyclerviewAdapter homeLableRecyclerview = new HomeLableRecyclerviewAdapter(this);
 
-        RecyclerView recyclerView = findViewById(R.id.home_lable);
+        FocusKeepRecyclerView recyclerView = findViewById(R.id.home_lable);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         recyclerView.setAdapter(homeLableRecyclerview);
     }
