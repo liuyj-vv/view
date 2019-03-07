@@ -10,6 +10,7 @@ import java.util.Stack;
 public class MyFragment extends Fragment implements FragmentBackHandlerInterface{
     public static Stack<Fragment> fragmentStack = new Stack<>();
     public static Fragment fragmentCurr = null;
+    public static Fragment fragmentNetCurr = null;
     public static boolean isFromHomeLable = true;  //标志当前切换进入 fragment 的方式
 
     @Override

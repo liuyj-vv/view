@@ -11,7 +11,7 @@ import android.widget.Toast;
 import com.app.ch.view.R;
 
 public class FragmentNet_static extends MyFragment {
-    static String TAG = "FragmentNet_static";
+    static String TAG = FragmentNet_static.class.getSimpleName();
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
