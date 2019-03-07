@@ -15,7 +15,7 @@ import com.app.ch.view.R;
 public class FragmentNet extends MyFragment {
     static String TAG = FragmentNet.class.getSimpleName();
     Fragment fragmentNet_static = new FragmentNet_static();
-    Fragment fragmentNet_dhcp_ = new FragmentNet_dhcp();
+    Fragment fragmentNet_dhcp = new FragmentNet_dhcp();
     Fragment fragmentNet_wifi = new FragmentNet_wifi();
     Button button_static;
     Button button_dhcp;
@@ -30,27 +30,24 @@ public class FragmentNet extends MyFragment {
         button_static.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-//                getChildFragmentManager().beginTransaction().replace(R.id.fragment_net, fragmentNet_static).commit();
                 switchFragment(fragmentNet_static);
             }
         });
         button_dhcp.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-//                getChildFragmentManager().beginTransaction().replace(R.id.fragment_net, fragmentNet_dhcp_).commit();
-                switchFragment(fragmentNet_dhcp_);
-
+                switchFragment(fragmentNet_dhcp);
             }
         });
         button_wifi.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-//                getChildFragmentManager().beginTransaction().replace(R.id.fragment_net, fragmentNet_wifi).commit();
                 switchFragment(fragmentNet_wifi);
-
             }
         });
-        getChildFragmentManager().beginTransaction().replace(R.id.fragment_net, fragmentNet_static).commit();
+
+        switchFragment(fragmentNet_static);
+
         return view;
     }
 
