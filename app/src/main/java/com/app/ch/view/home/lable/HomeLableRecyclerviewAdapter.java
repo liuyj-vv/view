@@ -97,7 +97,7 @@ public class HomeLableRecyclerviewAdapter extends RecyclerView.Adapter<HomeLable
             item_name = itemView.findViewById(R.id.home_lable_btn);
 
             itemView.setFocusable(true);
-            itemView.setBackground(itemView.getResources().getDrawable(R.drawable.maker_btn));
+            itemView.setBackground(itemView.getResources().getDrawable(R.drawable.maker_btn_home_lable));
         }
     }
 }

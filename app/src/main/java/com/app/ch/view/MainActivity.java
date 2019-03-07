@@ -3,9 +3,7 @@ package com.app.ch.view;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Toast;
 
 import com.app.ch.view.fragment.FragmentAudio;
 import com.app.ch.view.fragment.FragmentBackHandlerHelper;
@@ -48,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setGainFocusListener(new FocusGainListener() {
             @Override
             public void onFocusGain(View child, View focued) {
-                focued.setBackground(getResources().getDrawable(R.drawable.maker_btn));
+                focued.setBackground(getResources().getDrawable(R.drawable.maker_btn_home_lable));
             }
         });
 
