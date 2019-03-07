@@ -11,10 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <!--<Button-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="test"/>-->
         <com.app.ch.view.home.lable.FocusKeepRecyclerView
             android:id="@+id/home_lable"
             android:layout_width="match_parent"
@@ -23,7 +19,7 @@
             <!--当 android:layout_height 不为 wrap_content 时，onCreateViewHolder 中才能获取到高度-->
         </com.app.ch.view.home.lable.FocusKeepRecyclerView>
         <android.support.v4.app.FragmentTabHost
-            android:id="@+id/home_fragment"
+            android:id="@+id/fragment_home"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         </android.support.v4.app.FragmentTabHost>

@@ -18,13 +18,6 @@ public class FragmentNet extends MyFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_net, container, false);
-        button = view.findViewById(R.id.child_fragment);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                switchFragment(fragment);
-            }
-        });
         return view;
     }
 

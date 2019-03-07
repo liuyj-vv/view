@@ -27,7 +27,7 @@ public class MyFragment extends Fragment implements FragmentBackHandlerInterface
         if (fragmentTo.isAdded()) {
             transaction.show(fragmentTo);
         } else {
-            transaction.add(R.id.home_fragment, fragmentTo).show(fragmentTo);
+            transaction.add(R.id.fragment_home, fragmentTo).show(fragmentTo);
         }
 
         if (null != fragmentCurr) {

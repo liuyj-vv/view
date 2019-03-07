@@ -4,16 +4,38 @@
     android:layout_height="match_parent"
     android:gravity="center">
 
-    <TextView
-        android:id="@+id/home_lable_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="25dp"
-        android:text="net" />
-    <Button
-        android:id="@+id/child_fragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/maker_btn"
-        android:text="child_fragment"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_static_ip"
+                style="@style/net_button"
+                android:text="静态ip设置"/>
+            <Button
+                android:id="@+id/btn_dhcp_ip"
+                style="@style/net_button"
+                android:text="DHCP ip设置"/>
+            <Button
+                android:id="@+id/btn_wifi_ip"
+                style="@style/net_button"
+                android:text="wifi 设置"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <android.support.v4.app.FragmentTabHost
+                android:id="@+id/fragment_net"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </android.support.v4.app.FragmentTabHost>
+        </LinearLayout>
+
+    </LinearLayout>
 </LinearLayout>
