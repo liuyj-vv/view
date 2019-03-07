@@ -13,23 +13,23 @@
         android:text="wifi" />
 
     <com.app.ch.view.tools.IpEditeView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        style="@style/wifi_ip_edit_view">
     </com.app.ch.view.tools.IpEditeView>
+
     <com.app.ch.view.tools.IpEditeView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        style="@style/wifi_ip_edit_view">
     </com.app.ch.view.tools.IpEditeView>
+
     <com.app.ch.view.tools.IpEditeView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        style="@style/wifi_ip_edit_view">
     </com.app.ch.view.tools.IpEditeView>
+
     <com.app.ch.view.tools.IpEditeView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        style="@style/wifi_ip_edit_view">
     </com.app.ch.view.tools.IpEditeView>
+
     <com.app.ch.view.tools.IpEditeView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        style="@style/wifi_ip_edit_view">
     </com.app.ch.view.tools.IpEditeView>
+
 </LinearLayout>
