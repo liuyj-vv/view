@@ -13,15 +13,15 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/btn_static_ip"
+                android:id="@+id/btn_ip_static"
                 style="@style/net_button"
                 android:text="静态ip设置"/>
             <Button
-                android:id="@+id/btn_dhcp_ip"
+                android:id="@+id/btn_ip_dhcp"
                 style="@style/net_button"
                 android:text="DHCP ip设置"/>
             <Button
-                android:id="@+id/btn_wifi_ip"
+                android:id="@+id/btn_ip_wifi"
                 style="@style/net_button"
                 android:text="wifi 设置"/>
 
