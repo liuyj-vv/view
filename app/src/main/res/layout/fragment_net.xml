@@ -24,7 +24,6 @@
                 android:id="@+id/btn_ip_wifi"
                 style="@style/net_button"
                 android:text="wifi 设置"/>
-
         </LinearLayout>
 
         <LinearLayout
