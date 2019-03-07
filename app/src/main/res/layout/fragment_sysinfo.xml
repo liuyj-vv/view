@@ -2,16 +2,90 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center">
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/home_lable_btn"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="25dp"
-        android:text="sysinfo" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/sysinfo_model_title"
+            android:text="机顶盒型号:"
+            style="@style/sysinfo_title_textview" />
+        <TextView
+            android:id="@+id/sysinfo_model"
+            android:text="test"
+            style="@style/sysinfo_textview" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/sysinfo_sn_title"
+            android:text="机顶盒号:"
+            style="@style/sysinfo_title_textview" />
+        <TextView
+            android:id="@+id/sysinfo_sn"
+            android:text="fewafawef"
+            style="@style/sysinfo_textview" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/sysinfo_cardno_title"
+            android:text="智能卡号:"
+            style="@style/sysinfo_title_textview" />
+        <TextView
+            android:id="@+id/sysinfo_cardno"
+            android:text="tnyftyndty"
+            style="@style/sysinfo_textview" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/sysinfo_mac_title"
+            android:text="mac地址:"
+            style="@style/sysinfo_title_textview" />
+        <TextView
+            android:id="@+id/sysinfo_mac"
+            android:text="rdtgserfawef"
+            style="@style/sysinfo_textview"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/sysinfo_hardversion_title"
+            android:text="硬件版本:"
+            style="@style/sysinfo_title_textview" />
+        <TextView
+            android:id="@+id/sysinfo_hardversion"
+            android:text="zvssetrth5trs4eQAEAETGSRGT"
+            style="@style/sysinfo_textview" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/sysinfo_softersion_title"
+            android:text="软件版本:"
+            style="@style/sysinfo_title_textview" />
+        <TextView
+            android:id="@+id/sysinfo_softversion"
+            android:text="TYJT7I8KRREARWRETYUKHLUIYUYT"
+            style="@style/sysinfo_textview" />
+    </LinearLayout>
+
 </LinearLayout>
