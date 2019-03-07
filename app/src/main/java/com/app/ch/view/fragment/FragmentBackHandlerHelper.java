@@ -51,7 +51,8 @@ public class FragmentBackHandlerHelper {
     public static boolean isFragmentBackHandled(Fragment fragment) {
         return fragment != null
                 && fragment.isVisible()
-                && fragment.getUserVisibleHint() //for ViewPager
+                && fragment.getUserVisibleHint()    //for ViewPager
+                && fragment.getView().hasFocus()    //当前焦点在fragment中
                 && fragment instanceof FragmentBackHandlerInterface
                 && ((FragmentBackHandlerInterface) fragment).onBackPressed();
     }
